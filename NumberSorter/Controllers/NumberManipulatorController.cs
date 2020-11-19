@@ -25,8 +25,6 @@ namespace NumberSorter.Controllers
                 numberSort.sortDirection, numberSort.sortMillisecTime))
                 return Json(new List<string>() { "2", "A Database Error has occurred, Please try again later" }, JsonRequestBehavior.AllowGet);
 
-            System.Diagnostics.Debug.WriteLine(DBAccessModel.removeFromDB("3,4,5,6", "ASCE", 0.2443));
-
             return Json(new List<string>() {"0", "Added Successfully" }, JsonRequestBehavior.AllowGet);
         }
     }
