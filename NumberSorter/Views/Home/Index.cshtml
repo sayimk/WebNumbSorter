@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+@Scripts.Render("~/bundles/AjaxSortRequest")
+
+
+
+
+<div class="row">
+    <div class="col-md-10">
+        <label for="numbInput">Enter Numbers, seperated by ','</label>
+        <input type="text" id="numbInput" />
+        <button class="btn btn-success" id="saveBtn">Sort and Save</button>
+        <button class="btn btn-info" onclick="window.location.href = '/Data/AllSortedData/'">Get All Data (Save As...)</button>
+
+
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-sm-5">
+
+        <input type="radio" id="sortACSE" name="SortBy" value="ASCE" checked="checked" />
+        <label for="sortACSE">Ascending</label>
+        <input type="radio" id="sortDESC" name="SortBy" value="DESC" />
+        <label for="sortDESC">Descending</label>
+
+
+    </div>
+
+</div>
