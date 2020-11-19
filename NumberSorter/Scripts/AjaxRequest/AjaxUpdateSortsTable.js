@@ -21,7 +21,7 @@ var updateTable = function (response) {
     var TRTitle2 = tableRow.insertCell(1);
     var TRTitle3 = tableRow.insertCell(2);
     TRTitle1.innerHTML = "<strong>Numbers:</strong";
-    TRTitle2.innerHTML = "<strong>Sort Time:</strong";
+    TRTitle2.innerHTML = "<strong>Sort Time (milliseconds):</strong";
     TRTitle3.innerHTML = "<strong>Sort Direction:</strong";
     //iterate through response and output
     var rowCount = 1;

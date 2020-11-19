@@ -30,7 +30,7 @@ let updateTable = (response) => {
     let TRTitle3 = tableRow.insertCell(2);
 
     TRTitle1.innerHTML = "<strong>Numbers:</strong";
-    TRTitle2.innerHTML = "<strong>Sort Time:</strong";
+    TRTitle2.innerHTML = "<strong>Sort Time (milliseconds):</strong";
     TRTitle3.innerHTML = "<strong>Sort Direction:</strong";
 
     //iterate through response and output
