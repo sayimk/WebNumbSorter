@@ -3,24 +3,25 @@
 }
 
 @Scripts.Render("~/bundles/AjaxSortRequest")
-
-
+@Scripts.Render("~/bundles/AjaxUpdateSortsTable")
 
 
 <div class="row">
-    <div class="col-md-10">
+    <h3>Number Sorter</h3>
+
+</div>
+<div class="row">
+    <div class="col-lg-10" id="numbInputCol" >
         <label for="numbInput">Enter Numbers, seperated by ','</label>
         <input type="text" id="numbInput" />
         <button class="btn btn-success" id="saveBtn">Sort and Save</button>
-        <button class="btn btn-info" onclick="window.location.href = '/Data/AllSortedData/'">Get All Data (Save As...)</button>
-
-
     </div>
 
 </div>
 
+
 <div class="row">
-    <div class="col-sm-5">
+    <div class="col-lg-9" id="sortSettingsCol">
 
         <input type="radio" id="sortACSE" name="SortBy" value="ASCE" checked="checked" />
         <label for="sortACSE">Ascending</label>
@@ -28,6 +29,20 @@
         <label for="sortDESC">Descending</label>
 
 
+    </div>
+</div>
+
+<hr />
+
+<div class="row" >
+    <button class="btn btn-info pull-right" onclick=window.open("/Data/AllSortedData/")>Get All Data (Save As...)</button>
+    
+</div>
+
+<div class="row">
+    <div class="sortsTableCol">
+        <table class="table table-striped" id="sortsTable">
+        </table>
     </div>
 
 </div>

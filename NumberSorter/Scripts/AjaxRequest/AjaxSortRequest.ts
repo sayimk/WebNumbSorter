@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sortDESC = document.getElementById('sortDESC') as HTMLInputElement;
     sortASCE = document.getElementById('sortACSE') as HTMLInputElement;
 
+    console.log(successAlertDiv);
     //Event Handlers
     saveBtn.onclick = () => {
 
@@ -45,10 +46,10 @@ let ajaxSortRequest = (sortOrder: string) => {
         success: (Response) => {
 
             if (Response[0] == 0) {
-                successAlert(Response[1])
-
-
+                successAlert(Response[1]);
                 textInput.value = "";
+                AjaxRefreshSortTable();
+
             } else if (Response[0]) {
                 errorAlert(Response[1]);
             }

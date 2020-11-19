@@ -1,0 +1,29 @@
+﻿
+body {
+    background-color: #252525;
+}
+
+hr {
+    border-top: 2px solid #737373;
+}
+
+.sortsTableCol {
+    padding-top: 10px;
+    text-align: center;
+}
+
+#bodyCol {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    background-color: #F2F2F2;
+}
+
+#numbInputCol {
+    padding-top: 50px;
+    padding-left: 250px;
+}
+
+#sortSettingsCol {
+    padding-left: 460px;
+}

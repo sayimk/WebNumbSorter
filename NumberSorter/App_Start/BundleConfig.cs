@@ -26,8 +26,14 @@ namespace NumberSorter
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
+            bundles.Add(new StyleBundle("~/Content/customCSS").Include(
+                      "~/Content/CustomCSS.css"));
+
             bundles.Add(new ScriptBundle("~/bundles/AjaxSortRequest").Include(
                 "~/Scripts/AjaxRequest/AjaxSortRequest.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/AjaxUpdateSortsTable").Include(
+                "~/Scripts/AjaxRequest/AjaxUpdateSortsTable.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/UINotifications").Include(
                 "~/Scripts/WebUI/UINotifications.js"));

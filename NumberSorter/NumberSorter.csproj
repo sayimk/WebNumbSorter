@@ -142,6 +142,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CustomCSS.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -195,6 +196,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\AjaxRequest\AjaxSortRequest.ts" />
+    <TypeScriptCompile Include="Scripts\AjaxRequest\AjaxUpdateSortsTable.ts" />
     <TypeScriptCompile Include="Scripts\WebUI\UINotifications.ts" />
   </ItemGroup>
   <PropertyGroup>

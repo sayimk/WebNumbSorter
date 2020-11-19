@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     textInput = document.getElementById('numbInput');
     sortDESC = document.getElementById('sortDESC');
     sortASCE = document.getElementById('sortACSE');
+    console.log(successAlertDiv);
     //Event Handlers
     saveBtn.onclick = function () {
         if (textInput.value != "") {
@@ -37,6 +38,7 @@ var ajaxSortRequest = function (sortOrder) {
             if (Response[0] == 0) {
                 successAlert(Response[1]);
                 textInput.value = "";
+                AjaxRefreshSortTable();
             }
             else if (Response[0]) {
                 errorAlert(Response[1]);

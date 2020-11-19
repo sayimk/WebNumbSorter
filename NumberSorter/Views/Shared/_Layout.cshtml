@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Number Sorter</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/customCSS")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
 
-    <div class="container body-content">
+    <div class="container body-content" id="bodyCol">
 
         <div id="dangerAlert">
         </div>
@@ -20,7 +21,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Number Sorter</p>
+            <p>&copy; @DateTime.Now.Year - Number Sorter - Sayim Khan</p>
         </footer>
     </div>
 

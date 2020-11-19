@@ -1,5 +1,3 @@
-F:\WorkSpace\WebNumbSorter\NumberSorter.Tests\obj\Debug\NumberSorter.Tests.csprojAssemblyReference.cache
-F:\WorkSpace\WebNumbSorter\NumberSorter.Tests\obj\Debug\NumberSorter.Tests.csproj.CoreCompileInputs.cache
 F:\WorkSpace\WebNumbSorter\NumberSorter.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 F:\WorkSpace\WebNumbSorter\NumberSorter.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 F:\WorkSpace\WebNumbSorter\NumberSorter.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -30,6 +28,8 @@ F:\WorkSpace\WebNumbSorter\NumberSorter.Tests\bin\Debug\System.Web.WebPages.xml
 F:\WorkSpace\WebNumbSorter\NumberSorter.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
 F:\WorkSpace\WebNumbSorter\NumberSorter.Tests\bin\Debug\System.Web.WebPages.Razor.xml
 F:\WorkSpace\WebNumbSorter\NumberSorter.Tests\bin\Debug\System.Web.Optimization.xml
+F:\WorkSpace\WebNumbSorter\NumberSorter.Tests\obj\Debug\NumberSorter.Tests.csprojAssemblyReference.cache
+F:\WorkSpace\WebNumbSorter\NumberSorter.Tests\obj\Debug\NumberSorter.Tests.csproj.CoreCompileInputs.cache
 F:\WorkSpace\WebNumbSorter\NumberSorter.Tests\obj\Debug\NumberSorter.Tests.csproj.CopyComplete
 F:\WorkSpace\WebNumbSorter\NumberSorter.Tests\obj\Debug\NumberSorter.Tests.dll
 F:\WorkSpace\WebNumbSorter\NumberSorter.Tests\obj\Debug\NumberSorter.Tests.pdb
