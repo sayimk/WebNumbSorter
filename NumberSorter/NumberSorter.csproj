@@ -128,9 +128,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DB\DBAccessModel.cs" />
-    <Compile Include="Models\Parsers\stoiParser.cs" />
-    <Compile Include="Models\SortType\NumberSortModel.cs" />
+    <Compile Include="Services\DB\DBAccessModel.cs" />
+    <Compile Include="Services\Parsers\StoiParser.cs" />
+    <Compile Include="Models\NumberModels\NumberSortModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

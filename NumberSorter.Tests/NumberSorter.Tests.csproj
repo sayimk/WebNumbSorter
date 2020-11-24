@@ -89,9 +89,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\DB\DBAccessModelTest.cs" />
-    <Compile Include="Models\Parsers\stoiParserTest.cs" />
-    <Compile Include="Models\SortType\NumberSortModelTest.cs" />
+    <Compile Include="Services\DB\DBAccessModelTest.cs" />
+    <Compile Include="Services\Parsers\StoiParserTest.cs" />
+    <Compile Include="Models\NumberModels\NumberSortModelTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>

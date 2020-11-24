@@ -19,6 +19,7 @@ let AjaxRefreshSortTable = () => {
     })
 }
 
+
 let updateTable = (response) => {
 
     sortsTable.innerHTML = "";
