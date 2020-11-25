@@ -9,6 +9,7 @@ var AjaxRefreshSortTable = function () {
         url: "/Data/AllSortedData",
         dataType: "json",
         success: function (Response) {
+            console.log(Response);
             updateTable(Response);
         }
     });

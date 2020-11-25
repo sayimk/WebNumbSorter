@@ -9,22 +9,22 @@ namespace NumberSorter.Models.NumberModels
         public static string sortDirectionAscending = "ASCE";
         public static string sortDirectionDescending = "DESC";
 
-        public List<int> numbers { get; set; }
+        public List<int> sortedNumbers { get; set; }
 
         public string sortDirection { get; set; }
 
-        public double sortMillisecTime { get; set; }
+        public double sortTimeMillisec { get; set; }
 
         public NumberSortModel()
         {
-            numbers = new List<int>();
+            sortedNumbers = new List<int>();
             sortDirection = "";
-            sortMillisecTime = 0.0;
+            sortTimeMillisec = 0.0;
         }
 
         public NumberSortModel(List<int> numbers, string sortDirection)
         {
-            this.numbers = numbers;
+            this.sortedNumbers = numbers;
             this.sortDirection = sortDirection;
         }
 
@@ -32,7 +32,7 @@ namespace NumberSorter.Models.NumberModels
         {
             var stopWatch = new Stopwatch();
 
-            if (numbers.Count == 0)
+            if (sortedNumbers.Count == 0)
                 return false;
 
             try
@@ -41,14 +41,14 @@ namespace NumberSorter.Models.NumberModels
                 {
 
                     stopWatch.Start();
-                    numbers.Sort((a, b) => b.CompareTo(a));
+                    sortedNumbers.Sort((a, b) => b.CompareTo(a));
                     stopWatch.Stop();
                 }
                 else
                 {
 
                     stopWatch.Start();
-                    numbers.Sort((a, b) => a.CompareTo(b));
+                    sortedNumbers.Sort((a, b) => a.CompareTo(b));
                     stopWatch.Stop();
                 }
             }
@@ -58,7 +58,7 @@ namespace NumberSorter.Models.NumberModels
                 return false;
             }
 
-            sortMillisecTime = stopWatch.Elapsed.TotalMilliseconds;
+            sortTimeMillisec = stopWatch.Elapsed.TotalMilliseconds;
             return true;
         }
     }

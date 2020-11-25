@@ -156,3 +156,9 @@ F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter\obj\Debug\NumberSorter.cspr
 F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter\obj\Debug\NumberSorter.csproj.CopyComplete
 F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter\obj\Debug\NumberSorter.dll
 F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter\obj\Debug\NumberSorter.pdb
+F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter\bin\EntityFramework.dll
+F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter\bin\EntityFramework.SqlServer.dll
+F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter\bin\PetaPoco.dll
+F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter\bin\EntityFramework.xml
+F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter\bin\EntityFramework.SqlServer.xml
+F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter\obj\Debug\NumberSorter.csprojAssemblyReference.cache

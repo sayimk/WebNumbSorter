@@ -13,6 +13,7 @@ let AjaxRefreshSortTable = () => {
         url: "/Data/AllSortedData",
         dataType: "json",
         success: (Response) => {
+            console.log(Response);
             updateTable(Response);
 
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NumberSorter.Models.NumberModels;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -10,165 +11,71 @@ namespace NumberSorter.Services.DB
 {
     public class DBAccessModel
     {
-        public string GetConnectionString(string connectionName = "RecordedSorts")
+        public bool AddSortedToDB(string sortedNumberString, string sortDirection, double sortTimeMillisec)
         {
-            return ConfigurationManager.ConnectionStrings[connectionName].ConnectionString;
-        }
-    
-        public Boolean AddSortedToDB(string sortedNumberString, string sortDirection, double sortTimeMillisec)
-        {
-            bool success = false;
-            var cnn = new SqlConnection(GetConnectionString());
+            bool successful = false;
 
             try
             {
-                cnn.Open();
-                var command = new SqlCommand(null, cnn);
+                using (var ctx = new Sorts())
+                {
 
-                //preparing preparedstatement
-                command.CommandText = "INSERT INTO Sorts (sortedNumbers, sortDirection, sortTimeMillisec)" +
-                    "values(@numbers, @direction, @time)";
+                    var newSort = new Sort()
+                    {
+                        sortedNumbers = sortedNumberString,
+                        sortDirection = sortDirection,
+                        sortTimeMillisec = (decimal?)sortTimeMillisec
+                    };
 
-                //setting pram
-                var numbersParam = new SqlParameter("@numbers", SqlDbType.VarChar, sortedNumberString.Length);
-                numbersParam.Value = sortedNumberString;
-                command.Parameters.Add(numbersParam);
+                    int preAdd = ctx.SortedNumbers.ToList().Count;
 
+                    ctx.SortedNumbers.Add(newSort);
+                    ctx.SaveChanges();
 
-                var directionParam = new SqlParameter("@direction", SqlDbType.VarChar, sortDirection.Length);
-                directionParam.Value = sortDirection;
-                command.Parameters.Add(directionParam);
-
-
-                var timeParam = new SqlParameter("@time", SqlDbType.Decimal);
-                timeParam.Precision = 8;
-                timeParam.Scale = 4;
-                timeParam.Value = sortTimeMillisec;
-                command.Parameters.Add(timeParam);
-
-                //trying the query and checking
-                command.Prepare();
-                command.ExecuteNonQuery();
-
-                //checking if entry is entered
-                command.CommandText = "select * from Sorts where sortedNumbers=@numbers " +
-                        "and sortTimeMillisec = @time " +
-                        "and sortDirection=@direction;";
-
-                command.Prepare();
-                
-                success = command.ExecuteReader().HasRows;
-            } 
+                    if (ctx.SortedNumbers.ToList().Count>preAdd)
+                    {
+                        successful = true;
+                    }
+                }
+            }
             catch (Exception)
             {
-                success = false;
+                return successful;
             }
-            finally
-            {
-                cnn.Close();
-            }
-            return success;
+
+            return successful;
         }
-        
+
+
         public List<Object> GetAllAsJson()
         {
             var resultJson = new List<Object>();
-            var cnn = new SqlConnection(GetConnectionString());
 
             try
             {
-                cnn.Open();
-                var command = new SqlCommand(null, cnn);
-
-                command.CommandText = "select * from Sorts";
-                var reader = command.ExecuteReader();
-
-                while (reader.Read())
+                using (var ctx = new Sorts())
                 {
-                    var temp = new List<object>();
-                    temp.Add(reader["sortedNumbers"].ToString());
-                    temp.Add(reader["sortTimeMillisec"]);
-                    temp.Add(reader["sortDirection"]);
+                    List<Sort> results = ctx.SortedNumbers.ToList();
 
-                    resultJson.Add(temp);
+                    foreach (var item in results)
+                    {
+                       
+                        var temp = new List<object>();
+                        temp.Add(item.sortedNumbers);
+                        temp.Add(item.sortTimeMillisec);
+                        temp.Add(item.sortDirection);
+
+                        resultJson.Add(temp);
+                    }
                 }
-                
-                cnn.Close();
-
             }
-            catch (SqlException)
+            catch (Exception)
             {
-                resultJson.Add("SQL Exception");
-            }
-                catch (Exception)
-            {
-                resultJson.Add("Unknown Error");
-            }
-            finally
-            {
-            cnn.Close();
+                resultJson.Add("Error in fetching Data");
             }
 
             return resultJson;
         }
-
-        //used to clean test data
-        public bool removeFromDB(string sortedNumberString, string sortDirection, double sortTimeMillisec)
-        {
-            int affected = 0;
-            bool successful;
-
-            var cnn = new SqlConnection(GetConnectionString());
-            
-            try
-            {
-                cnn.Open();
-                var command = new SqlCommand(null, cnn);
-
-                command.CommandText = "delete from Sorts where sortedNumbers=@numbers " +
-                        "and sortTimeMillisec = @time " +
-                        "and sortDirection=@direction;" ;
-
-                var numbersParam = new SqlParameter("@numbers", SqlDbType.VarChar, sortedNumberString.Length);
-                numbersParam.Value = sortedNumberString;
-                command.Parameters.Add(numbersParam);
-
-
-                var directionParam = new SqlParameter("@direction", SqlDbType.VarChar, sortDirection.Length);
-                directionParam.Value = sortDirection;
-                command.Parameters.Add(directionParam);
-
-
-                var timeParam = new SqlParameter("@time", SqlDbType.Decimal);
-                timeParam.Precision = 8;
-                timeParam.Scale = 4;
-                timeParam.Value = sortTimeMillisec;
-                command.Parameters.Add(timeParam);
-
-                //trying the query and checking
-                
-                    command.Prepare();
-                    affected = command.ExecuteNonQuery();
-
-            }
-            catch (Exception)
-            {
-                successful =  false;
-            }
-            finally
-            {
-                cnn.Close();
-            }
-            
-
-            if (affected == 1)
-                successful = true;
-            else
-                successful = false;
-
-            return successful;
-        }
-    
     }
 
 }

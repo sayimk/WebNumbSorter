@@ -21,8 +21,8 @@ namespace NumberSorter.Controllers
                 return Json(new List<string>() { "1", "An Sort Error Occurred, Please check input" }, JsonRequestBehavior.AllowGet);
 
 
-            if (!dbAccessModel.AddSortedToDB(StoiParser.ToString(numberSort.numbers), 
-                numberSort.sortDirection, numberSort.sortMillisecTime))
+            if (!dbAccessModel.AddSortedToDB(StoiParser.ToString(numberSort.sortedNumbers), 
+                numberSort.sortDirection, numberSort.sortTimeMillisec))
                 return Json(new List<string>() { "2", "A Database Error has occurred, Please try again later" }, JsonRequestBehavior.AllowGet);
 
             return Json(new List<string>() {"0", "Added Successfully" }, JsonRequestBehavior.AllowGet);

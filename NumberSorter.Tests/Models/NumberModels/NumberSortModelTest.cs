@@ -12,7 +12,7 @@ namespace NumberSorter.Tests.Models.NumberModelsTest
         public void sortNumbers_ValidInput_Ascending(){
 
             NumberSortModel testModel = new NumberSortModel();
-            testModel.numbers = new List<int>() { 4, 3, 2, 1 };
+            testModel.sortedNumbers = new List<int>() { 4, 3, 2, 1 };
             testModel.sortDirection = NumberSortModel.sortDirectionAscending;
 
 
@@ -20,7 +20,7 @@ namespace NumberSorter.Tests.Models.NumberModelsTest
 
             Boolean results = false;
 
-            if ((testModel.numbers.Count == 4) && (testModel.numbers[0] == 1))
+            if ((testModel.sortedNumbers.Count == 4) && (testModel.sortedNumbers[0] == 1))
                 results = true;
 
 
@@ -32,13 +32,13 @@ namespace NumberSorter.Tests.Models.NumberModelsTest
         {
 
             NumberSortModel testModel = new NumberSortModel();
-            testModel.numbers = new List<int>() { 1, 2, 3, 4 };
+            testModel.sortedNumbers = new List<int>() { 1, 2, 3, 4 };
             testModel.sortDirection = NumberSortModel.sortDirectionDescending;
 
             testModel.SortNumbers();
 
             Boolean results = false;
-            if ((testModel.numbers.Count == 4) && (testModel.numbers[0] == 4))
+            if ((testModel.sortedNumbers.Count == 4) && (testModel.sortedNumbers[0] == 4))
                 results = true;
 
 
@@ -50,7 +50,7 @@ namespace NumberSorter.Tests.Models.NumberModelsTest
         {
 
             NumberSortModel testModel = new NumberSortModel();
-            testModel.numbers = new List<int>();
+            testModel.sortedNumbers = new List<int>();
             testModel.sortDirection = NumberSortModel.sortDirectionAscending;
 
             testModel.SortNumbers();
@@ -64,13 +64,13 @@ namespace NumberSorter.Tests.Models.NumberModelsTest
         {
 
             NumberSortModel testModel = new NumberSortModel();
-            testModel.numbers = new List<int>() { 4, 3, 2, 1 };
+            testModel.sortedNumbers = new List<int>() { 4, 3, 2, 1 };
             testModel.sortDirection = NumberSortModel.sortDirectionAscending;
 
 
             testModel.SortNumbers();
 
-            Assert.IsTrue(testModel.sortMillisecTime != 0.0);
+            Assert.IsTrue(testModel.sortTimeMillisec != 0.0);
             
         }
 

@@ -70,3 +70,8 @@ F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter.Tests\obj\Debug\NumberSorte
 F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter.Tests\obj\Debug\NumberSorter.Tests.csproj.CopyComplete
 F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter.Tests\obj\Debug\NumberSorter.Tests.dll
 F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter.Tests\obj\Debug\NumberSorter.Tests.pdb
+F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter.Tests\bin\Debug\WebGrease.dll
+F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter.Tests\bin\Debug\Antlr3.Runtime.dll
+F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter.Tests\bin\Debug\Antlr3.Runtime.pdb
+F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter.Tests\bin\Debug\EntityFramework.dll
+F:\WorkSpace\GitHub Repos\WebNumbSorter\NumberSorter.Tests\bin\Debug\EntityFramework.xml

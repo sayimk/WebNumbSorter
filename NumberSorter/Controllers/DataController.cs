@@ -10,6 +10,7 @@ namespace NumberSorter.Controllers
         {
 
             var dbAccessModel = new DBAccessModel();
+
             return Json(dbAccessModel.GetAllAsJson(), JsonRequestBehavior.AllowGet);
         }
     }
